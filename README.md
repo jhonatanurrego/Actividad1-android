@@ -31,7 +31,116 @@ Un ítem separado que muestra la descripción.
 
 
 Flujo de navegación (resumen)
+@Composable
+fun app(){
+    inicio()
+}
 
+@SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
+@OptIn(ExperimentalMaterial3Api::class)
+@Composable
+fun inicio(){
+
+    Scaffold(
+        topBar = {
+            // Barra superior con título
+            TopAppBar(
+                title = {
+                    IconButton(
+                        onClick = {}
+                    ) {
+                        Icon(
+                            painter = painterResource(R.drawable.flechaatras),
+                            contentDescription = "d",
+                            modifier = Modifier
+                                .size(20.dp)
+                        )
+                    }
+                    Text(
+                        "SHIRTS",
+                        modifier = Modifier
+                            .fillMaxSize()
+                            .padding(top = 11.dp),
+                        textAlign = TextAlign.Center,
+                        fontWeight = FontWeight.Bold
+                    )
+                },
+                colors = TopAppBarDefaults.topAppBarColors(
+                    containerColor = Color(0xFF1f1f29),
+                    titleContentColor = Color.White
+                )
+            )
+        },
+        bottomBar = {
+            // Barra inferior vacía, reservada para futuros elementos
+            BottomAppBar(
+                containerColor = Color(0xFF383840),
+            ) {
+                Row(
+                    modifier = Modifier
+                        .fillMaxSize(),
+                    horizontalArrangement = Arrangement.SpaceAround,
+                    verticalAlignment = Alignment.CenterVertically
+                ) {
+                    IconButton(
+                        onClick = {}
+                    ) {
+                        Icon(
+                            painter = painterResource(R.drawable.libro),
+                            "icono",
+                            modifier = Modifier
+                                .padding(4.dp),
+                            tint = Color.White
+                        )
+                    }
+                    IconButton(
+                        onClick = {}
+                    ) {
+                        Icon(
+                            painter = painterResource(R.drawable.lupa),
+                            "icono",
+                            modifier = Modifier
+                                .padding(4.dp),
+                            tint = Color.White
+                        )
+                    }
+                    IconButton(
+                        onClick = {}
+                    ) {
+                        Icon(
+                            painter = painterResource(R.drawable.corazon),
+                            "icono",
+                            modifier = Modifier
+                                .padding(4.dp),
+                            tint = Color.White
+                        )
+                    }
+                    IconButton(
+                        onClick = {}
+                    ) {
+                        Icon(
+                            painter = painterResource(R.drawable.usuario),
+                            "icono",
+                            modifier = Modifier,
+                            tint = Color.White
+                        )
+                    }
+                }
+            }
+        },
+        // Color de fondo general de la pantalla
+        containerColor = Color(0xFF202028)
+    ) {
+        // Contenedor principal de la galería
+        Box(
+            modifier = Modifier.fillMaxSize(),
+            contentAlignment = Alignment.Center
+        ) {
+
+
+        }
+    }
+}
 La pantalla de inicio muestra una fila horizontal con 5 imágenes.
 Al hacer clic en una imagen, se envían título, imagen y descripción a través del NavHost.
 La pantalla de detalles recibe esos argumentos y muestra la imagen (posible ampliación al hacer clic) y la descripción.
